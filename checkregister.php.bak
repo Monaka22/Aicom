@@ -1,0 +1,10 @@
+<?PHP
+$Name = $_REQUEST['name'];
+$Uname = $_REQUEST['Uname'];
+$Pass = $_REQUEST['Pass'];
+include "conect.php";
+$strSQL = "insert into member values (null,'$Uname','$Pass','$Name','user')";
+mysql_query($strSQL) or die("error=$strsql");
+mysql_close();
+echo "<script>window.location='login.php';</script>";
+?>
