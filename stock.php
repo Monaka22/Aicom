@@ -19,7 +19,9 @@
     $strSQL = "SELECT *
     FROM stock
     INNER JOIN product
-    ON stock.stock_product_id = product.product_id;";
+    ON stock.stock_product_id = product.product_id
+    ORDER BY stock_status ASC
+    ;";
     $objQuery = $mysqli->query($strSQL);
     $num = mysqli_num_rows($objQuery);
     for ($i = 1; $i <= $num; $i++) {

@@ -45,7 +45,7 @@ function fill_product($connect, $id)
         <tr>
             <th scope="row">product</th>
             <td width="114" height="27">
-                <select name="product" id="product" onchange="myFunction()">
+                <select name="product" id="product" onchange="myFunction()" >
                     <option value="">เลือกสินค้า</option>
                     <?php echo fill_product($mysqli, ""); ?>
                 </select>

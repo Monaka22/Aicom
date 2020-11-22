@@ -1,5 +1,4 @@
  <?PHP
-session_start();
 if($_SESSION["user_id"] == "")
 { echo"Please login!";
 exit();
