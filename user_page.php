@@ -1,16 +1,11 @@
 <?php
 session_start();
-if($_SESSION["UserID"]==""){
+if($_SESSION["user_id"]==""){
 	echo "Please Login!";
 	exit();
 }
-	if($_SESSION["Status"] !="USER")
-	{
-		echo "This page for User only!";
-		exit();
-	}
 	include "connect.php";
-	$strSQL ="SELECT * FROM member WHERE UserID='".$_SESSION["UserID"]."'";
+	$strSQL ="SELECT * FROM users WHERE user_id='".$_SESSION["user_id"]."'";
 	$objQuery = $mysqli->query($strSQL);
 	$objResult = mysqli_fetch_assoc($objQuery);
 ?>
@@ -28,11 +23,11 @@ if($_SESSION["UserID"]==""){
 <tr>
 		<tr>
 			<td width="87">&nbsp;Username</td>
-			<td width="197"><?php echo $objResult["Username"];?></td>
+			<td width="197"><?php echo $objResult["username"];?></td>
 		</tr>
 		<tr>
 			<td>&nbsp;Name</td>
-			<td><?php echo $objResult["Name"];?></td>
+			<td><?php echo $objResult["name"];?></td>
 		</tr>
 	</tbody>
 	</table>

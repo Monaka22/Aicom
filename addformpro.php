@@ -2,7 +2,7 @@
 <form id="form1" name="form1" method="post" action="addsave.php" enctype="multipart/form-data">
 <table width="450" align="center"  border="0" class="square">
   <tr>
-    <th colspan="2" scope="row">AddProduct</th>
+    <th colspan="2" scope="row">เพิ่มสินค้า</th>
 	</tr>
 	<tr>
 	<th width="114" height="27" scope="row">name</th>

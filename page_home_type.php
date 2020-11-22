@@ -4,8 +4,8 @@
     <td colspan="7" align="center"><a href="index.php?page=addtype">เพิ่มประเภทสินค้า</td>
   </tr>
   <tr bgcolor="#cccccc">
-	<td width="33" align="center"><strong>id</strong></td>
-	<td width="218" align="center"><strong>title</strong></td>
+	<td width="33" align="center"><strong>ลำดับ</strong></td>
+	<td width="218" align="center"><strong>ชื่อประเภท</strong></td>
 	<td width="100" align="center"><strong>edit</strong></td>
 	<td width="100" align="center"><strong>delete</strong></td>
 	</tr>

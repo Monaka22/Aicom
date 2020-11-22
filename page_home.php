@@ -2,10 +2,10 @@
 <link href="style.css" rel="stylesheet" type="text/css"/>
 <table width="90%" align="center"  class="square">
   <tr>
-    <td colspan="7" align="center"><a href="addformpro.php">AddBook</td>
+    <td colspan="7" align="center"><a href="index.php?page=add">เพิ่มสินค้า</td>
   </tr>
   <tr bgcolor="#cccccc">
-	<td width="33" align="center"><strong>id</strong></td>
+	<td width="33" align="center"><strong>ลำดับ</strong></td>
 	<td width="121" align="center"><strong>รูป</strong></td>
 	<td width="218" align="center"><strong>ชื่อสินค้า</strong></td>
 	<td width="59" align="center"><strong>ราคา</strong></td>
@@ -42,7 +42,7 @@
 	$objQueryc = $mysqli->query($strSQLc) or die ("error=$strSQLc");
 	$objResultc = mysqli_fetch_assoc($objQueryc);
 	echo $objResultc['product_type_name']?></td>
-	<td><a href="editform.php?product_id=<?php echo $objResult['product_id']?>">edit</a></td>
+	<td><a href="index.php?page=editproduct&&product_id=<?php echo $objResult['product_id']?>">edit</a></td>
 	<td><a href="delete.php?product_id=<?php echo $objResult['product_id']?>"
 	onclick="return confirm('Are you sure??');">delete</a></td>
 	</tr>

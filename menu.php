@@ -3,7 +3,7 @@
 <td><div align="center" valign="top"><a href="index.php?page=home">ขาย</a></div></td>
 </tr>
 <tr>
-<td><div align="center"><a href="index.php?page=stock">สต็อกสินค้า</a></div></td>
+<td><div align="center"><a href="index.php?page=stock">ซื้อสินค้า</a></div></td>
 </tr>
 <tr>
 <td><div align="center"><a href="index.php?page=product">สินค้า</a></div></td>
