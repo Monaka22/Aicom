@@ -3,7 +3,7 @@ include "conect.php";
  $output = '';  
  if(isset($_POST["type_id"]))  
  {  
-      if($_POST["type_id"] != '')  
+      if($_POST["type_id"] != "0")  
       {  
            $sql = "SELECT * FROM product WHERE status = 1 and product_type_id = '".$_POST["type_id"]."'";  
       }  

@@ -1,10 +1,12 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="style.css" rel="stylesheet" type="text/css" />
-<table width="90%" align="center" class="square">
-    <tr>
-        <td colspan="7" align="center"><a href="index.php?page=addstock">เพิ่มคำสั่งซื้อ</td>
-    </tr>
-    <tr bgcolor="#cccccc">
+<div class="text-center">
+	<h3>รายการคำสั่งซื้อ</h3>
+</div>
+<div class="text-right">
+	<button class="btn btn-success"><a class="text-dark" href="index.php?page=addstock">เพิ่มคำสั่งซื้อ</a></button>
+</div>
+<table class="table">
+    <thead class="thead-dark">
+		<tr>
         <td width="33" align="center"><strong>ลำดับ</strong></td>
         <td width="121" align="center"><strong>รูป</strong></td>
         <td width="218" align="center"><strong>ชื่อสินค้า</strong></td>
@@ -13,7 +15,8 @@
         <td width="59" align="center"><strong>สถานนะ</strong></td>
         <td width="36" align="center"><strong>ยืนยัน</strong></td>
         <td width="43" align="center"><strong>ยกเลิก</strong></td>
-    </tr>
+		</tr>
+	</thead>
     <?php
     include "conect.php";
     $strSQL = "SELECT *
@@ -27,6 +30,7 @@
     for ($i = 1; $i <= $num; $i++) {
         $objResult =  mysqli_fetch_assoc($objQuery);
     ?>
+    <tbody>
         <tr style="text-align: center;">
             <td><?php echo $i ?></td>
             <td><?php
@@ -41,9 +45,13 @@
             <td><?php echo $objResult['stock_total'] ?></td>
             <td><?php
                 if ($objResult['stock_status'] === "1") {
-                    echo "สำเร็จ";
+                    ?>
+                    <span style="color: green;">สำเร็จ</span>
+                    <?php
                 } else if ($objResult['stock_status'] === "2") {
-                    echo "ยกเลิก";
+                    ?>
+                    <span style="color: red;">ยกเลิก</span>
+                    <?php
                 } else {
                     echo "รอดำเนินการ";
                 }
@@ -73,4 +81,5 @@
     <?php
     }
     ?>
+    </tbody>
 </table>

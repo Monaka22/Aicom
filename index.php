@@ -17,20 +17,20 @@ $objResult = mysqli_fetch_assoc($objQuery);
 ?>
 
 <body>
-	
-<!-- <div><b>Name:</b><?php echo $objResult["name"]; ?><br><a href="edit_profile.php">Edit Profile</a></div> -->
 	<div class='container-fluid'>
 		<div class="row">
-				<div class="col-10">
-					<h3 class="text-left">ร้านพฤกษา</h3>
+			<!-- <div class="col-12" style="background-color: #49FF33;"> -->
+				<div class="col-10" style="background-color: #ADF2B8;">
+					<h3 class="text-left mt-3">ร้านพฤกษา</h3>
 				</div>
-				<div class="col-2">
-					<p class="text-right"><b>Name : </b><?php echo $objResult["name"]; ?><br><a href="index.php?page=editprofile"> Edit Profile </a></p>
+				<div class="col-2" style="background-color: #ADF2B8;">
+					<p class="text-right pt-2"><b>Name : </b><?php echo $objResult["name"]; ?><br><a href="index.php?page=editprofile"> Edit Profile </a></p>
 				</div>
-			<div class="col-3">
+			<!-- </div> -->
+			<div class="col-2 m-0 p-0">
 					<?php include("menu.php"); ?>
 			</div>
-			<div class="col-9">
+			<div class="col-10 mt-3">
 				<?php
 				if (empty($_GET["page"])) {
 					$_GET["page"] = "Home";

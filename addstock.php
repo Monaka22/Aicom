@@ -1,4 +1,3 @@
-<link href="style.css" rel="stylesheet" type="text/css" />
 <?php
 include "conect.php";
 function fill_type($connect)
@@ -28,39 +27,27 @@ function fill_product($connect, $id)
 }
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<form id="form1" name="form1" method="post" action="addstocksave.php">
-    <table width="450" align="center" border="0" class="square">
-        <tr>
-            <th colspan="2" scope="row">เพิ่มคำสั่งซื้อ</th>
-        </tr>
-        <tr>
-            <th scope="row">category</th>
-            <td width="114" height="27">
-                <select name="type" id="type">
-                    <option value="">Show All Product</option>
-                    <?php echo fill_type($mysqli); ?>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">product</th>
-            <td width="114" height="27">
-                <select name="product" id="product" onchange="myFunction()" >
-                    <option value="">เลือกสินค้า</option>
-                    <?php echo fill_product($mysqli, ""); ?>
-                </select>
-            </td>
-        </tr>
-        <p id="demo"></p>
-        <tr>
-            <th scope="row">จำนวน</th>
-            <td><input type="number" name="p_stock" id="p_stock" /></td>
-        </tr>
-        <tr>
-            <th colspan="2" scope="row">
-                <input type="submit" name="button" value="สั่งซื้อ" /></th>
-        </tr>
-    </table>
+<h3 class="text-left mb-3">เพิ่มคำสั่งซื้อสินค้า</h3>
+<form  method="post" action="addstocksave.php">
+  <div class="form-group">
+    <label>ประเภทสินค้า</label>
+    <select class="form-control" name="type" id="type">
+        <option value="0">เลือกประเภทสินค้า</option>
+        <?php echo fill_type($mysqli); ?>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>สินค้า</label>
+    <select class="form-control" name="product" id="product" onchange="myFunction()" >
+        <option value="0">เลือกสินค้า</option>
+        <?php echo fill_product($mysqli, ""); ?>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>จำนวน</label>
+    <input  class="form-control" type="number" name="p_stock" id="p_stock" />
+  </div>
+  <button type="submit" class="btn btn-primary">สั่งซื้อสินค้า</button>
 </form>
 <script>
     $(document).ready(function() {
@@ -82,6 +69,5 @@ function fill_product($connect, $id)
 <script>
     function myFunction() {
     var x = document.getElementById("product").value;
-    console.log(x)
     }
 </script>

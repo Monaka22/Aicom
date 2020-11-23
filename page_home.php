@@ -1,14 +1,20 @@
+<div class="text-center">
+	<h3>รายการสินค้า</h3>
+</div>
+<div class="text-right">
+	<button class="btn btn-success"><a class="text-dark" href="index.php?page=add">เพิ่มสินค้า</a></button>
+</div>
 <table class="table">
 	<thead class="thead-dark">
 		<tr>
-		<td width="33" align="center"><strong>ลำดับ</strong></td>
-		<td width="121" align="center"><strong>รูป</strong></td>
-		<td width="218" align="center"><strong>ชื่อสินค้า</strong></td>
-		<td width="59" align="center"><strong>ราคา</strong></td>
-		<td width="59" align="center"><strong>สต็อก</strong></td>
-		<td width="59" align="center"><strong>ประเภท</strong></td>
-		<td width="36" align="center"><strong>edit</strong></td>
-		<td width="43" align="center"><strong>delete</strong></td>
+		<td width="100" align="center"><strong>ลำดับ</strong></td>
+		<td width="200" align="center"><strong>รูป</strong></td>
+		<td width="200" align="center"><strong>ชื่อสินค้า</strong></td>
+		<td width="100" align="center"><strong>ราคา</strong></td>
+		<td width="100" align="center"><strong>สต็อก</strong></td>
+		<td width="100" align="center"><strong>ประเภท</strong></td>
+		<td width="100" align="center"><strong>แก้ไข</strong></td>
+		<td width="100" align="center"><strong>ลบ</strong></td>
 		</tr>
 	</thead>
 	<tbody>

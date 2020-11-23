@@ -1,14 +1,19 @@
-1s<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<table width="90%" align="center"  class="square">
-  <tr>
-    <td colspan="7" align="center"><a href="index.php?page=addtype">เพิ่มประเภทสินค้า</td>
-  </tr>
-  <tr bgcolor="#cccccc">
-	<td width="33" align="center"><strong>ลำดับ</strong></td>
-	<td width="218" align="center"><strong>ชื่อประเภท</strong></td>
-	<td width="100" align="center"><strong>edit</strong></td>
-	<td width="100" align="center"><strong>delete</strong></td>
-	</tr>
+<div class="text-center">
+	<h3>รายการประเภทสินค้า</h3>
+</div>
+<div class="text-right">
+	<button class="btn btn-success"><a class="text-dark" href="index.php?page=addtype">เพิ่มประเภทสินค้า</a></button>
+</div>
+<table class="table">
+	<thead class="thead-dark">
+		<tr>
+			<td width="33" align="center"><strong>ลำดับ</strong></td>
+			<td width="218" align="center"><strong>ชื่อประเภท</strong></td>
+			<td width="100" align="center"><strong>แก้ไข</strong></td>
+			<td width="100" align="center"><strong>ลบ</strong></td>
+		</tr>
+	</thead>
+	<tbody>
 	<?php
 	include "conect.php";
 	$strSQL = "SELECT * FROM product_type where status = 1";
@@ -31,4 +36,5 @@
 		}
 	}
 	?>
+	</tbody>
 </table>
