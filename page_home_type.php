@@ -2,7 +2,7 @@
 	<h3>รายการประเภทสินค้า</h3>
 </div>
 <div class="text-right">
-	<button class="btn btn-success"><a class="text-dark" href="index.php?page=addtype">เพิ่มประเภทสินค้า</a></button>
+	<button class="btn btn-success"><a class="text-white" href="index.php?page=addtype">เพิ่มประเภทสินค้า</a></button>
 </div>
 <table class="table">
 	<thead class="thead-dark">
@@ -30,7 +30,7 @@
 			<td><?php echo $objResult['product_type_name'] ?></td>
 			<td><a href="index.php?page=edittype&&product_type_id=<?php echo $objResult['product_type_id']?>">edit</a></td>
 			<td><a href="deletetype.php?product_type_id=<?php echo $objResult['product_type_id']?>"
-			onclick="return confirm('Are you sure??');">delete</a></td>
+			onclick="return confirm('ต้องการลบประเภทสินค้า?');">delete</a></td>
 			</tr>
 			<?php
 		}

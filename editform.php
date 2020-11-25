@@ -27,7 +27,7 @@ $objResult = mysqli_fetch_assoc($objQuery);
     <label>ประเภทสินค้า</label>
     <select name="c_id" class="form-control">
 	<?php
-	$strSQLc = "SELECT * FROM product_type";
+	$strSQLc = "SELECT * FROM product_type WHERE status = 1";
 	$objQueryc = $mysqli->query($strSQLc) or die ("error=$strSQLc");
 	$numc = mysqli_num_rows($objQueryc);
 	for($i=1;$i<=$numc;$i++)

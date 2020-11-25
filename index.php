@@ -20,11 +20,11 @@ $objResult = mysqli_fetch_assoc($objQuery);
 	<div class='container-fluid'>
 		<div class="row">
 			<!-- <div class="col-12" style="background-color: #49FF33;"> -->
-				<div class="col-10" style="background-color: #ADF2B8;">
-					<h3 class="text-left mt-3">ร้านพฤกษา</h3>
+				<div class="col-2" style="background-color: #233b27;">
+					<h3 class="text-center text-white mt-3">ร้านพฤกษา</h3>
 				</div>
-				<div class="col-2" style="background-color: #ADF2B8;">
-					<p class="text-right pt-2"><b>Name : </b><?php echo $objResult["name"]; ?><br><a href="index.php?page=editprofile"> Edit Profile </a></p>
+				<div class="col-10" style="background-color: #79B081;">
+					<p class="text-right pt-2 text-white"><b>Name : </b><?php echo $objResult["name"]; ?><br><a class="text-white" href="index.php?page=editprofile"> Edit Profile </a></p>
 				</div>
 			<!-- </div> -->
 			<div class="col-2 m-0 p-0">
@@ -39,6 +39,9 @@ $objResult = mysqli_fetch_assoc($objQuery);
 					case "home":
 						include("sale.php");
 						break;
+					case "orderdetail":
+					include("saledetail.php");
+					break;
 					case "add":
 						include("addformpro.php");
 						break;
@@ -72,8 +75,17 @@ $objResult = mysqli_fetch_assoc($objQuery);
 					case "addsale":
 						include("addsale.php");
 						break;
+					case "reports":
+						include("reports.php");
+					break;
+					case "topsale":
+						include("topsale.php");
+					break;
+					case "lowstock":
+						include("lowstock.php");
+					break;
 					default:
-						include("page_home.php");
+						include("sale.php");
 				}
 				?>
 			</div>

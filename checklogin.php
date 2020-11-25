@@ -1,7 +1,7 @@
 <?php
 // echo 'Hello ' . htmlspecialchars($_POST["Uname"]) . '!';
 session_start();
-include"conect.php";
+include "conect.php";
 $strSQL="SELECT * FROM users WHERE username='".$_POST["Uname"]."'
 and password= '".$_POST["Pass"]."'";
 $objQuery = $mysqli->query($strSQL);

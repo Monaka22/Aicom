@@ -1,8 +1,58 @@
+<?php
+include "conect.php";
+function fill_type($connect)
+{
+    $output = '';
+    $sql = "SELECT * FROM product_type where status= 1";
+    $result = mysqli_query($connect, $sql);
+    echo json_decode($result);
+    while ($row = mysqli_fetch_array($result)) {
+        $output .= '<option value="' . $row["product_type_id"] . '">' . $row["product_type_name"] . '</option>';
+    }
+    return $output;
+}
+function fill_product($connect, $id)
+{
+    $output = '';
+    if ($id != "") {
+        $sql = "SELECT * FROM product where status= 1 and product_type_id = $id";
+    } else {
+        $sql = "SELECT * FROM product where status= 1";
+    }
+    $result = mysqli_query($connect, $sql);
+    while ($row = mysqli_fetch_array($result)) {
+        $output .= '<tr style="text-align: center;">';
+        $output .= '<td><img src="img/' . $row['product_id'] . '.jpg" width="80" border="0" /></td>';
+        $output .= '<td>' . $row['product_name'] . '</td>';
+        $output .= '<td>' . $row['product_price'] . '</td>';
+        $output .= '<td>' . $row['product_stock'] . '</td>';
+        $output .= '<td><a href="#" onclick="addcart('.$row['product_id'].')">เพิ่ม</a></td>';
+        $output .= '</tr>';
+    }
+    return $output;
+}
+function check($id) {
+    return $id;
+}
+?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <div class="text-center">
 	<h3>รายการสินค้า</h3>
 </div>
-<div class="text-right">
-	<button class="btn btn-success"><a class="text-dark" href="index.php?page=add">เพิ่มสินค้า</a></button>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2 w-100" type="search" id='search' placeholder="ค้นหาสินค้า" aria-label="Search">
+  </form>
+<div class="d-flex">
+  <div class="mr-auto">
+  <div class="d-flex flex-row">
+  <div><h4>เลือกประเภทสินค้า</h4></div>
+  <div class="ml-2"><select class="mt-1" name="type" id="type">
+				<option value="">เลือกประเภทสินค้า</option>
+				<?php echo fill_type($mysqli); ?>
+			</select></div>
+	</div>
+  </div>
+  <div><button class="btn btn-success"><a class="text-white" href="index.php?page=add">เพิ่มสินค้า</a></button></div>
 </div>
 <table class="table">
 	<thead class="thead-dark">
@@ -17,7 +67,7 @@
 		<td width="100" align="center"><strong>ลบ</strong></td>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody id="product">
 		<?php
 		include "conect.php";
 		$strSQL = "SELECT * FROM product where status = 1 ";
@@ -48,10 +98,43 @@
 		echo $objResultc['product_type_name']?></td>
 		<td><a href="index.php?page=editproduct&&product_id=<?php echo $objResult['product_id']?>">edit</a></td>
 		<td><a href="delete.php?product_id=<?php echo $objResult['product_id']?>"
-		onclick="return confirm('Are you sure??');">delete</a></td>
+		onclick="return confirm('ต้องการลบสินค้าชนิดนี้ ?');">delete</a></td>
 		</tr>
 		<?php
 		}
 		?>
 	</tbody>
 </table>
+<script>
+    $(document).ready(function() {
+        $('#type').change(function() {
+            var type_id = $(this).val();
+            $.ajax({
+                url: "load_product_home.php",
+                method: "POST",
+                data: {
+                    type_id: type_id
+                },
+                success: function(data) {
+                    $('#product').html(data);
+                }
+            });
+        });
+    });
+</script>
+<script>
+	$("#search").on("change paste keyup", function() {
+		var search = $(this).val();
+		$.ajax({
+                url: "load_product_search.php",
+                method: "POST",
+                data: {
+                    search: search
+                },
+                success: function(data) {
+                    $('#product').html(data);
+                }
+            });
+		document.getElementById("cform").reset();
+	});
+</script>

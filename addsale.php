@@ -26,22 +26,28 @@ function fill_product($connect, $id)
         $output .= '<td>' . $row['product_name'] . '</td>';
         $output .= '<td>' . $row['product_price'] . '</td>';
         $output .= '<td>' . $row['product_stock'] . '</td>';
-        $output .= '<td><a href="#" onclick="addcart(' . $row['product_id'] . ')">เพิ่ม</a></td>';
+        $output .= '<td><a href="#" onclick="addcart('.$row['product_id'].')">เพิ่ม</a></td>';
         $output .= '</tr>';
     }
     return $output;
 }
+function check($id) {
+    return $id;
+}
+
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <h3 colspan="2" scope="row">เพิ่มคำสั่งซื้อ</h3>
-    <form id="form1" name="form1" method="post" action="addstocksave.php">
+    <form id="form1" name="form1" method="post" action="addsalesave.php">
             <div class="row">
                 <div class="col-6">
-                    <h4>เลือกประเภทสินค้า</h4>
-                    <select name="type" id="type">
-                    <option value="">Show All Product</option>
-                    <?php echo fill_type($mysqli); ?>
-                    </select>
+                <div class="d-flex flex-row">
+                    <div class="p-2"><h4>เลือกประเภทสินค้า</h4></div>
+                    <div class="p-2"><select class="mt-1" name="type" id="type">
+                                    <option value="">เลือกประเภทสินค้า</option>
+                                    <?php echo fill_type($mysqli); ?>
+                                </select></div>
+                        </div>
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -52,28 +58,30 @@ function fill_product($connect, $id)
                                 <td align="center"><strong>เพิ่มเข้าตะกร้า</strong></td>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="product">
                             <?php echo fill_product($mysqli, ""); ?>
                         </tbody>
                     </table>
                 </div>
                 <div class="col-6">
                     <h4>ตะกร้าสินค้า</h4>
-                    <table class="table" style="margin-top: 33px;">
-                        <thead class="thead-dark">
+                    <table class="table" style="margin-top: 24px;">
+                        <thead>
                             <tr>
-                                <td align="center"><strong>รูป</strong></td>
-                                <td align="center"><strong>ชื่อ</strong></td>
-                                <td align="center"><strong>ราคา</strong></td>
-                                <td align="center"><strong>สต็อก</strong></td>
-                                <td align="center"><strong>ลบจากตระกร้า</strong></td>
+                                <td width="100" align="center"><strong>รูป</strong></td>
+                                <td width="150" align="center"><strong>ชื่อ</strong></td>
+                                <td width="150" align="center"><strong>จำนวน</strong></td>
+                                <td width="150" align="center"><strong>ราคา</strong></td>
+                                <td width="300" align="center"><strong>ลบจากตระกร้า</strong></td>
                             </tr>
                         </thead>
-                        <tbody>
-                            <?php echo fill_product($mysqli, ""); ?>
+                        <tbody id="cart">
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="text-right">
+                <button class="btn btn-success" type="submit" ><a class="text-white">ขาย</a></button>
             </div>
     </form>
 <script>
@@ -94,12 +102,31 @@ function fill_product($connect, $id)
     });
 </script>
 <script>
-    function myFunction() {
-        var x = document.getElementById("product").value;
-        console.log(x)
-    }
-
     function addcart(id) {
-        console.log(id)
-    }
+            $.ajax({
+                url: "addcart_load.php",
+                method: "POST",
+                data: {
+                    product_id: id
+                },
+                success: function(data) {
+                    console.log(data)
+                    $('#cart').html(data);
+                }
+            });
+        }   
+    
+    function removecart(id) {
+        $.ajax({
+            url: "removecart_load.php",
+            method: "POST",
+            data: {
+                product_id: id
+            },
+            success: function(data) {
+                console.log(data)
+                $('#cart').html(data);
+            }
+        });
+    }    
 </script>

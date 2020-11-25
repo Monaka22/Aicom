@@ -9,10 +9,9 @@ include "conect.php";
       }  
       else  
       {  
-           $sql = "SELECT * FROM product status = 1";  
+           $sql = "SELECT * FROM product where status = 1";  
       }  
       $result = mysqli_query($mysqli, $sql);  
-      $output .= '<option value="">เลือกสินค้า</option>';
       while($row = mysqli_fetch_array($result))  
       {  
         $output .= '<option value="'.$row["product_id"].'">'.$row["product_name"]." ราคา".$row["product_price"]." บาท".'</option>';  

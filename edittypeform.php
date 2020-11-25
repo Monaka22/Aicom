@@ -1,6 +1,6 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 <?php
-include"conect.php";
+include "conect.php";
 $p_id = $_GET["product_type_id"];
 $strSQL="select * from product_type where product_type_id='$p_id'";
 $objQuery = $mysqli->query($strSQL);

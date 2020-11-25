@@ -2,19 +2,19 @@
 	<h3>รายการคำสั่งซื้อ</h3>
 </div>
 <div class="text-right">
-	<button class="btn btn-success"><a class="text-dark" href="index.php?page=addstock">เพิ่มคำสั่งซื้อ</a></button>
+	<button class="btn btn-success"><a class="text-white" href="index.php?page=addstock">เพิ่มคำสั่งซื้อ</a></button>
 </div>
 <table class="table">
     <thead class="thead-dark">
 		<tr>
-        <td width="33" align="center"><strong>ลำดับ</strong></td>
-        <td width="121" align="center"><strong>รูป</strong></td>
-        <td width="218" align="center"><strong>ชื่อสินค้า</strong></td>
-        <td width="59" align="center"><strong>ราคา</strong></td>
-        <td width="59" align="center"><strong>จำนวน</strong></td>
-        <td width="59" align="center"><strong>สถานนะ</strong></td>
-        <td width="36" align="center"><strong>ยืนยัน</strong></td>
-        <td width="43" align="center"><strong>ยกเลิก</strong></td>
+        <td width="50" align="center"><strong>ลำดับ</strong></td>
+        <td width="150" align="center"><strong>รูป</strong></td>
+        <td width="150" align="center"><strong>ชื่อสินค้า</strong></td>
+        <td width="150" align="center"><strong>ราคา</strong></td>
+        <td width="150" align="center"><strong>จำนวน</strong></td>
+        <td width="100" align="center"><strong>สถานนะ</strong></td>
+        <td width="150" align="center"><strong>ยืนยัน</strong></td>
+        <td width="150" align="center"><strong>ยกเลิก</strong></td>
 		</tr>
 	</thead>
     <?php
