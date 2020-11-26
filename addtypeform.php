@@ -2,7 +2,7 @@
 <form method="post" action="addtypesave.php">
   <div class="form-group">
     <label>ชื่อประเภทสินค้า</label>
-    <input  class="form-control" type="text" name="p_name" id="p_name" />
+    <input  class="form-control" type="text" name="p_name" id="p_name" required/>
   </div>
   <button type="submit" class="btn btn-primary">เพิ่มประเภทสินค้า</button>
 </form>

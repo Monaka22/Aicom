@@ -15,23 +15,23 @@
    <form method="post" action="save_profile.php">
      <div class="form-group">
        <label>ID :</label>
-       <input disabled class="form-control" type="text" value="<?PHP echo $ObjResult['user_id']; ?>" />
+       <input disabled class="form-control" type="text" value="<?PHP echo $ObjResult['user_id']; ?>" required/>
      </div>
      <div class="form-group">
        <label>Name:</label>
-       <input class="form-control" type="text" name="name" id="name" value="<?PHP echo $ObjResult['name']; ?>" />
+       <input class="form-control" type="text" name="name" id="name" value="<?PHP echo $ObjResult['name']; ?>" required/>
   </div>
   <div class=" form-group">
        <label>Username:</label>
-       <input disabled class="form-control" type="text" value="<?PHP echo $ObjResult['username']; ?>" />
+       <input disabled class="form-control" type="text" value="<?PHP echo $ObjResult['username']; ?>" required/>
      </div>
      <div class="form-group">
        <label>Pass:</label>
-       <input class="form-control" type="password" name="pass" id="pass" value="<?PHP echo $ObjResult['password']; ?>" />
+       <input class="form-control" type="password" name="pass" id="pass" value="<?PHP echo $ObjResult['password']; ?>" required/>
      </div>
      <div class="form-group">
        <label>ConfirmPass:</label>
-       <input class="form-control" type="password" name="conpass" id="conpass" value="<?PHP echo $ObjResult['password']; ?>" />
+       <input class="form-control" type="password" name="conpass" id="conpass" value="<?PHP echo $ObjResult['password']; ?>" required/>
      </div>
      <button type="submit" class="btn btn-primary">แก้ไขข้อมูล</button>
      <button type="Reset" class="btn btn-primary">เอาใหม่</button>

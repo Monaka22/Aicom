@@ -11,11 +11,11 @@
           <form method="post" action="checklogin.php">
             <div class="form-group">
               <label for="exampleInputEmail1">Username</label>
-              <input type="text" class="form-control" id="Uname" name="Uname">
+              <input type="text" class="form-control" id="Uname" name="Uname" required>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="Pass" name="Pass">
+              <input type="password" class="form-control" id="Pass" name="Pass" required>
             </div>
             <button type="submit" class="btn btn-success">เข้าสู่ระบบ</button>
             <button type="Reset" class="btn btn-info">รีเซ็ท</button>

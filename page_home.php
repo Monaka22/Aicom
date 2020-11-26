@@ -39,14 +39,11 @@ function check($id) {
 <div class="text-center">
 	<h3>รายการสินค้า</h3>
 </div>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2 w-100" type="search" id='search' placeholder="ค้นหาสินค้า" aria-label="Search">
-  </form>
 <div class="d-flex">
   <div class="mr-auto">
   <div class="d-flex flex-row">
   <div><h4>เลือกประเภทสินค้า</h4></div>
-  <div class="ml-2"><select class="mt-1" name="type" id="type">
+  <div class="ml-2"><select class="form-control" name="type" id="type">
 				<option value="">เลือกประเภทสินค้า</option>
 				<?php echo fill_type($mysqli); ?>
 			</select></div>
@@ -54,13 +51,16 @@ function check($id) {
   </div>
   <div><button class="btn btn-success"><a class="text-white" href="index.php?page=add">เพิ่มสินค้า</a></button></div>
 </div>
-<table class="table">
-	<thead class="thead-dark">
+  <form class="form-inline mt-4 mb-4">
+    <input class="form-control mr-sm-2 w-100" type="search" id='search' placeholder="ค้นหาสินค้าจากชื่อสินค้า" aria-label="Search">
+  </form>
+<table class="table mt-4">
+	<thead style="background-color: #F4F4F4;" class="thead-dark">
 		<tr>
 		<td width="100" align="center"><strong>ลำดับ</strong></td>
 		<td width="200" align="center"><strong>รูป</strong></td>
 		<td width="200" align="center"><strong>ชื่อสินค้า</strong></td>
-		<td width="100" align="center"><strong>ราคา</strong></td>
+		<td width="100" align="center"><strong>ราคา ( บาท )</strong></td>
 		<td width="100" align="center"><strong>สต็อก</strong></td>
 		<td width="100" align="center"><strong>ประเภท</strong></td>
 		<td width="100" align="center"><strong>แก้ไข</strong></td>

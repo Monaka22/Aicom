@@ -1,12 +1,12 @@
 <?php  
 include "conect.php";
  $output = '';  
- $id = $_POST["type_id"]."";
- if(isset($_POST["type_id"]))  
+ $id = $_POST["search"]."";
+ if(isset($_POST["search"]))  
  {  
       if($id)  
       {  
-           $sql = "SELECT * FROM product WHERE status = 1 and product_type_id = '".$id."'";  
+           $sql = "SELECT * FROM product WHERE status = 1 and product_id = '".$id."'";  
       }  
       else  
       {  

@@ -31,21 +31,21 @@ function fill_product($connect, $id)
 <form  method="post" action="addstocksave.php">
   <div class="form-group">
     <label>ประเภทสินค้า</label>
-    <select class="form-control" name="type" id="type">
+    <select class="form-control" name="type" id="type" required>
         <option value="0">เลือกประเภทสินค้า</option>
         <?php echo fill_type($mysqli); ?>
     </select>
   </div>
   <div class="form-group">
     <label>สินค้า</label>
-    <select class="form-control" name="product" id="product" onchange="myFunction()" >
+    <select class="form-control" name="product" id="product" onchange="myFunction()" required >
         <option value="0">เลือกสินค้า</option>
         <?php echo fill_product($mysqli, ""); ?>
     </select>
   </div>
   <div class="form-group">
     <label>จำนวน</label>
-    <input  class="form-control" type="number" name="p_stock" id="p_stock" />
+    <input  class="form-control" type="number" name="p_stock" id="p_stock" required/>
   </div>
   <button type="submit" class="btn btn-primary">สั่งซื้อสินค้า</button>
 </form>

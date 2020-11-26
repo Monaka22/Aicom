@@ -1,14 +1,14 @@
 <div class="text-center">
 	<h3>สินค้าที่มีน้อยกว่า 10 ชิ้น</h3>
 </div>
-<table class="table">
-	<thead class="thead-dark">
+<table class="table mt-4">
+	<thead style="background-color: #F4F4F4;" class="thead-dark">
 		<tr>
 		<td width="100" align="center"><strong>ลำดับ</strong></td>
 		<td width="200" align="center"><strong>รูป</strong></td>
         <td width="200" align="center"><strong>ชื่อสินค้า</strong></td>
 		<td width="100" align="center"><strong>ประเภท</strong></td>
-		<td width="100" align="center"><strong>ราคา</strong></td>
+		<td width="100" align="center"><strong>ราคา ( บาท )</strong></td>
 		<td width="150" align="center"><strong>สต็อก</strong></td>
 		</tr>
 	</thead>

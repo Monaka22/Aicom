@@ -20,14 +20,14 @@ $objResult = mysqli_fetch_assoc($objQuery);
 	<div class='container-fluid'>
 		<div class="row">
 			<!-- <div class="col-12" style="background-color: #49FF33;"> -->
-				<div class="col-2" style="background-color: #233b27;">
+				<div id="title" class="col-2" style="background-color: #233b27;">
 					<h3 class="text-center text-white mt-3">ร้านพฤกษา</h3>
 				</div>
-				<div class="col-10" style="background-color: #79B081;">
-					<p class="text-right pt-2 text-white"><b>Name : </b><?php echo $objResult["name"]; ?><br><a class="text-white" href="index.php?page=editprofile"> Edit Profile </a></p>
+				<div id="profile-name" class="col-10" style="background-color: #79B081;">
+					<p class="text-right pt-2 text-white"><b>ชื่อพนักงาน : </b><?php echo $objResult["name"]; ?><br><a class="text-white" href="index.php?page=editprofile">แก้ไข ข้อมูลส่วนตัว</a></p>
 				</div>
 			<!-- </div> -->
-			<div class="col-2 m-0 p-0">
+			<div id="menu" class="col-2 m-0 p-0">
 					<?php include("menu.php"); ?>
 			</div>
 			<div class="col-10 mt-3">
@@ -77,6 +77,12 @@ $objResult = mysqli_fetch_assoc($objQuery);
 						break;
 					case "reports":
 						include("reports.php");
+					break;
+					case "reportpicker":
+						include("reportpicker.php");
+					break;
+					case "reportsalepicker":
+						include("reportsalepicker.php");
 					break;
 					case "topsale":
 						include("topsale.php");

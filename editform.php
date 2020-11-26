@@ -9,23 +9,23 @@ $objResult = mysqli_fetch_assoc($objQuery);
 <form method="post" action="editsave.php">
   <div class="form-group">
     <label>ชื่อสินค้า</label>
-    <input value="<?php echo $objResult['product_name'] ?>" class="form-control" type="text" name="p_name" id="p_name" />
+    <input value="<?php echo $objResult['product_name'] ?>" class="form-control" type="text" name="p_name" id="p_name" required/>
   </div>
   <div class="form-group">
     <label>รายละเอียดสินค้า</label>
-    <textarea  class="form-control" name="p_detail" cols="35" rows="5" id="p_detail"><?php echo $objResult['product_detail']?></textarea>
+    <textarea  class="form-control" name="p_detail" cols="35" rows="5" id="p_detail" required><?php echo $objResult['product_detail']?></textarea>
   </div>
   <div class="form-group">
-    <label>ราคา</label>
-    <input  class="form-control" type="number" name="p_price" id="p_price" value="<?php echo $objResult['product_price']?>" />
+    <label>ราคา ( บาท )</label>
+    <input  class="form-control" type="number" name="p_price" id="p_price" value="<?php echo $objResult['product_price']?>" required/>
   </div>
   <div class="form-group">
     <label>จำนวน</label>
-    <input  class="form-control" type="number" name="p_stock" id="p_stock" value="<?php echo $objResult['product_stock']?>" />
+    <input  class="form-control" type="number" name="p_stock" id="p_stock" value="<?php echo $objResult['product_stock']?>" required />
   </div>
   <div class="form-group">
     <label>ประเภทสินค้า</label>
-    <select name="c_id" class="form-control">
+    <select name="c_id" class="form-control" required>
 	<?php
 	$strSQLc = "SELECT * FROM product_type WHERE status = 1";
 	$objQueryc = $mysqli->query($strSQLc) or die ("error=$strSQLc");

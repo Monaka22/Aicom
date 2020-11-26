@@ -1,0 +1,46 @@
+@page
+{
+  size:A4;
+  margin: 0;
+}
+#sale
+{
+  display: none;
+  visibility: none;
+}
+#report
+{
+  display:contents !important;
+}
+#print-title{
+  display:contents !important;
+}
+#none-print
+{
+  display: none;
+  visibility: none;
+}
+#is-print
+{
+  display:contents !important;
+}
+#print-btn
+{
+  display: none;
+  visibility: none;
+}
+#title
+{
+  display: none;
+  visibility: none;
+}
+#profile-name
+{
+  display: none;
+  visibility: none;
+}
+#menu
+{
+  display: none;
+  visibility: none;
+}

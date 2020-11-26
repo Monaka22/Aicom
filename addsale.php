@@ -38,22 +38,25 @@ function check($id) {
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <h3 colspan="2" scope="row">เพิ่มคำสั่งซื้อ</h3>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2 w-100" type="search" id='search' placeholder="ค้นหาสินค้าจากรหัสสินค้า" aria-label="Search">
+    </form>
     <form id="form1" name="form1" method="post" action="addsalesave.php">
             <div class="row">
                 <div class="col-6">
                 <div class="d-flex flex-row">
                     <div class="p-2"><h4>เลือกประเภทสินค้า</h4></div>
-                    <div class="p-2"><select class="mt-1" name="type" id="type">
+                    <div class="p-2"><select class="form-control" name="type" id="type">
                                     <option value="">เลือกประเภทสินค้า</option>
                                     <?php echo fill_type($mysqli); ?>
                                 </select></div>
                         </div>
                     <table class="table">
-                        <thead class="thead-dark">
+                        <thead style="background-color: #F4F4F4;" class="thead-dark">
                             <tr>
                                 <td align="center"><strong>รูป</strong></td>
                                 <td align="center"><strong>ชื่อ</strong></td>
-                                <td align="center"><strong>ราคา</strong></td>
+                                <td align="center"><strong>ราคา ( บาท )</strong></td>
                                 <td align="center"><strong>สต็อก</strong></td>
                                 <td align="center"><strong>เพิ่มเข้าตะกร้า</strong></td>
                             </tr>
@@ -64,14 +67,14 @@ function check($id) {
                     </table>
                 </div>
                 <div class="col-6">
-                    <h4>ตะกร้าสินค้า</h4>
-                    <table class="table" style="margin-top: 24px;">
+                    <h4 style="margin-top: 9px;">ตะกร้าสินค้า</h4>
+                    <table class="table" style="margin-top: 16px;">
                         <thead>
                             <tr>
                                 <td width="100" align="center"><strong>รูป</strong></td>
                                 <td width="150" align="center"><strong>ชื่อ</strong></td>
                                 <td width="150" align="center"><strong>จำนวน</strong></td>
-                                <td width="150" align="center"><strong>ราคา</strong></td>
+                                <td width="150" align="center"><strong>ราคา ( บาท )</strong></td>
                                 <td width="300" align="center"><strong>ลบจากตระกร้า</strong></td>
                             </tr>
                         </thead>
@@ -110,7 +113,6 @@ function check($id) {
                     product_id: id
                 },
                 success: function(data) {
-                    console.log(data)
                     $('#cart').html(data);
                 }
             });
@@ -124,9 +126,24 @@ function check($id) {
                 product_id: id
             },
             success: function(data) {
-                console.log(data)
                 $('#cart').html(data);
             }
         });
     }    
+</script>
+<script>
+	$("#search").on("change paste keyup", function() {
+		var search = $(this).val();
+		$.ajax({
+                url: "load_product_sale_search.php",
+                method: "POST",
+                data: {
+                    search: search
+                },
+                success: function(data) {
+                    $('#product').html(data);
+                }
+            });
+		document.getElementById("cform").reset();
+	});
 </script>

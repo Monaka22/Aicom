@@ -2,23 +2,23 @@
 <form method="post" action="addsave.php" enctype="multipart/form-data">
   <div class="form-group">
     <label>ชื่อสินค้า</label>
-    <input  class="form-control" type="text" name="p_name" id="p_name" />
+    <input class="form-control" type="text" name="p_name" id="p_name" required/>
   </div>
   <div class="form-group">
     <label>รายละเอียดสินค้า</label>
-    <textarea  class="form-control" name="p_detail" cols="35" rows="5" id="p_detail"></textarea>
+    <textarea class="form-control" name="p_detail" cols="35" rows="5" id="p_detail" required></textarea>
   </div>
   <div class="form-group">
-    <label>ราคา</label>
-    <input  class="form-control" type="number" name="p_price" id="p_price" />
+    <label>ราคา ( บาท )</label>
+    <input class="form-control" type="number" name="p_price" id="p_price" required/>
   </div>
   <div class="form-group">
     <label>จำนวน</label>
-    <input  class="form-control" type="number" name="p_stock" id="p_stock" />
+    <input class="form-control" type="number" name="p_stock" id="p_stock" required/>
   </div>
   <div class="form-group">
     <label>ประเภทสินค้า</label>
-    <select  class="form-control" name="c_id" >
+    <select class="form-control" name="c_id"required >
     <?php
     include "conect.php";
     $strSQL = "SELECT * FROM product_type where status =1";
@@ -35,7 +35,7 @@
   </div>
   <div class="form-group">
     <label>รูปสินค้า</label>
-    <input  class="form-control" type="file" name="image" id="image" />
+    <input class="form-control" type="file" name="image" id="image" required />
   </div>
   <button type="submit" class="btn btn-primary">เพิ่มสินค้า</button>
 </form>

@@ -4,8 +4,8 @@
 <div class="text-right">
 	<button class="btn btn-success"><a class="text-white" href="index.php?page=addsale">เพิ่มการขายสินค้า</a></button>
 </div>
-<table class="table">
-    <thead class="thead-dark">
+<table class="table mt-4">
+    <thead style="background-color: #F4F4F4;" class="thead-dark">
 		<tr>
             <td width="100" align="center"><strong>ลำดับ</strong></td>
             <td width="150" align="center"><strong>หมายเลขการขาย</strong></td>

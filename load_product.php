@@ -14,7 +14,7 @@ include "conect.php";
       $result = mysqli_query($mysqli, $sql);  
       while($row = mysqli_fetch_array($result))  
       {  
-        $output .= '<option value="'.$row["product_id"].'">'.$row["product_name"]." ราคา".$row["product_price"]." บาท".'</option>';  
+        $output .= '<option value="'.$row["product_id"].'">'.$row["product_name"]." ราคา ( บาท )".$row["product_price"]." บาท".'</option>';  
       }  
       echo $output;  
  }  

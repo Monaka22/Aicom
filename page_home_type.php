@@ -4,8 +4,8 @@
 <div class="text-right">
 	<button class="btn btn-success"><a class="text-white" href="index.php?page=addtype">เพิ่มประเภทสินค้า</a></button>
 </div>
-<table class="table">
-	<thead class="thead-dark">
+<table class="table mt-4">
+	<thead style="background-color: #F4F4F4;" class="thead-dark">
 		<tr>
 			<td width="33" align="center"><strong>ลำดับ</strong></td>
 			<td width="218" align="center"><strong>ชื่อประเภท</strong></td>

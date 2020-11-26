@@ -18,7 +18,7 @@ include "conect.php";
         for($i=1;$i<=$num;$i++)
 		{ 
             $objResult =  mysqli_fetch_assoc($result);
-     //    $output .= '<option value="'.$row["product_id"].'">'.$row["product_name"]." ราคา".$row["product_price"]." บาท".'</option>';  
+     //    $output .= '<option value="'.$row["product_id"].'">'.$row["product_name"]." ราคา ( บาท )".$row["product_price"]." บาท".'</option>';  
             $output .= '<tr style="text-align: center;">';
             $output .= '<td>'.$i.'</td>';
             $output .= '<td><img src="img/' .$objResult['product_id'] . '.jpg" width="80" border="0" /></td>';
