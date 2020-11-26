@@ -28,9 +28,9 @@
 			<tr style="text-align: center;">
 			<td><?=$i?></td>
 			<td><?php echo $objResult['product_type_name'] ?></td>
-			<td><a href="index.php?page=edittype&&product_type_id=<?php echo $objResult['product_type_id']?>">edit</a></td>
+			<td><a href="index.php?page=edittype&&product_type_id=<?php echo $objResult['product_type_id']?>">แก้ไข</a></td>
 			<td><a href="deletetype.php?product_type_id=<?php echo $objResult['product_type_id']?>"
-			onclick="return confirm('ต้องการลบประเภทสินค้า?');">delete</a></td>
+			onclick="return confirm('ต้องการลบประเภทสินค้า?');">ลบ</a></td>
 			</tr>
 			<?php
 		}

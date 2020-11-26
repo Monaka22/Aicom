@@ -96,9 +96,9 @@ function check($id) {
 		$objQueryc = $mysqli->query($strSQLc) or die ("error=$strSQLc");
 		$objResultc = mysqli_fetch_assoc($objQueryc);
 		echo $objResultc['product_type_name']?></td>
-		<td><a href="index.php?page=editproduct&&product_id=<?php echo $objResult['product_id']?>">edit</a></td>
+		<td><a href="index.php?page=editproduct&&product_id=<?php echo $objResult['product_id']?>">แก้ไข</a></td>
 		<td><a href="delete.php?product_id=<?php echo $objResult['product_id']?>"
-		onclick="return confirm('ต้องการลบสินค้าชนิดนี้ ?');">delete</a></td>
+		onclick="return confirm('ต้องการลบสินค้าชนิดนี้ ?');">ลบ</a></td>
 		</tr>
 		<?php
 		}
