@@ -23,7 +23,6 @@
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
             <button type="Reset" class="btn btn-info">Reset</button>
-            <a href="register.php">Register</a>
           </form>
         </div>
      </div>

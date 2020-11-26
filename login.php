@@ -19,6 +19,7 @@
             </div>
             <button type="submit" class="btn btn-success">เข้าสู่ระบบ</button>
             <button type="Reset" class="btn btn-info">รีเซ็ท</button>
+            <a href="register.php">Register</a>
           </form>
         </div>
      </div>
