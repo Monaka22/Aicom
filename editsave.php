@@ -9,5 +9,5 @@ include "conect.php";
 $strSQL = "UPDATE `product` SET `product_name` = '$p_name',`product_detail` = '$p_detail',`product_stock` = '$p_stock',`product_price` = '$p_price',`product_type_id` = '$c_id' WHERE `product_id` = '$p_id'";
 $mysqli->query($strSQL) or die("error=$strsql");
 mysqli_close($mysqli);
-echo "<script>window.location='index.php?page=product';</script>";
+echo "<script>window.location='home.php?page=product';</script>";
 ?>

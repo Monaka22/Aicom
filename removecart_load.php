@@ -2,8 +2,6 @@
 include "conect.php";
 $id = $_POST["product_id"];
 $output = '';  
- if(isset($id) != "")
- {  
         $strSQLu = "UPDATE `carts` SET total = total - 1  WHERE `id` = '$id'";
         $mysqli->query($strSQLu) or die("error=$strSQLu");
 
@@ -29,5 +27,4 @@ $output = '';
           $output .= '<td width="300">'.$total.' บาท</td>';
           $output .= '</tr>';
           echo $output;  
- }  
  ?>  

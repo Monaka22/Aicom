@@ -9,6 +9,11 @@
     <h3 id="title">รายการขายสินค้า</h3>
     <h3 style="display: none;" id="print-title"></h3>
 </div>
+
+<div style="display: none;" id="print-title"> 
+    <p id='date-text' style="text-align: right;"></p>
+</div>
+
 <input style="
     width: 20%;
     text-align :center;
@@ -62,6 +67,7 @@ function(start, end, label) {
             <td width="50" align="center"><strong>ลำดับ</strong></td>
             <td width="150" align="center"><strong>รูป</strong></td>
             <td width="150" align="center"><strong>ชื่อสินค้า</strong></td>
+            <td width="150" align="center"><strong>วันที่สั่งซื้อ</strong></td>
             <td width="150" align="center"><strong>ราคา ( บาท )</strong></td>
             <td width="150" align="center"><strong>จำนวน</strong></td>
         </tr>
@@ -69,6 +75,7 @@ function(start, end, label) {
         <td width="50" align="center"><strong>ลำดับ</strong></td>
             <td width="150" align="center"><strong>รูป</strong></td>
             <td width="150" align="center"><strong>ชื่อสินค้า</strong></td>
+            <td width="150" align="center"><strong>วันที่สั่งซื้อ</strong></td>
             <td width="150" align="center"><strong>ราคา ( บาท )</strong></td>
             <td width="150" align="center"><strong>จำนวน</strong></td>
 		</tr>
@@ -108,4 +115,20 @@ function(start, end, label) {
         });
         $('#print-title').text('ยอดซื้อสินค้าวันที่ '+rangeDate)
 }
+</script>
+<script>
+    function formatDate() {
+    var d = new Date(),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+document.getElementById("date-text").innerHTML = "วันที่ออกใบเสร็จ : "+formatDate();
 </script>

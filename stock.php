@@ -2,7 +2,7 @@
 	<h3>รายการคำสั่งซื้อ</h3>
 </div>
 <div class="text-right">
-	<button class="btn btn-success"><a class="text-white" href="index.php?page=addstock">เพิ่มคำสั่งซื้อ</a></button>
+	<button class="btn btn-success"><a class="text-white" href="home.php?page=addstock">เพิ่มคำสั่งซื้อ</a></button>
 </div>
 <table class="table mt-4">
     <thead style="background-color: #F4F4F4;" class="thead-dark">
@@ -10,6 +10,7 @@
         <td width="50" align="center"><strong>ลำดับ</strong></td>
         <td width="150" align="center"><strong>รูป</strong></td>
         <td width="150" align="center"><strong>ชื่อสินค้า</strong></td>
+        <td width="150" align="center"><strong>วันที่สั่งซื้อ</strong></td>
         <td width="150" align="center"><strong>ราคา ( บาท )</strong></td>
         <td width="150" align="center"><strong>จำนวน</strong></td>
         <td width="100" align="center"><strong>สถานนะ</strong></td>
@@ -41,6 +42,7 @@
                 }
                 ?></td>
             <td><?php echo $objResult['product_name'] ?></td>
+            <td width="200"><?php echo $objResult['create_at'] ?></td>
             <td><?php echo $objResult['product_price'] ?></td>
             <td><?php echo $objResult['stock_total'] ?></td>
             <td><?php

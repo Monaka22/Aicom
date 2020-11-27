@@ -20,12 +20,14 @@ include "conect.php";
             $output .= '<td>'.$i.'</td>';
             $output .= '<td><img src="img/'.$objResult['product_id'].'.jpg" width="80" border="0" /></td>';
             $output .= '<td>' . $objResult['product_name'] . '</td>';
-            $output .= '<td  width="100">' . $objResult['product_price'] . ' บาท</td>';
+            $output .= '<td width="150">' . $objResult['create_at'] . '</td>';
+            $output .= '<td width="100">' . $objResult['product_price'] . ' บาท</td>';
             $output .= '<td>' . $objResult['stock_total'] . '</td>';
             $output .= '</tr>';
             $total = $total + $objResult['stock_total'] * $objResult['product_price'];
         }  
             $output .= '<tr style="text-align: center;">';
+            $output .= '<td></td>';
             $output .= '<td></td>';
             $output .= '<td></td>';
             $output .= '<td></td>';

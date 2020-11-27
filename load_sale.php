@@ -18,8 +18,8 @@ include "conect.php";
             $output .= '<td>' . $objResult['name'] . '</td>';
             $output .= '<td  width="100">' . $objResult['create_at'] . '</td>';
             $output .= '<td>' . $objResult['order_total'] . ' บาท</td>';
-            // $output .= '<td><a href="index.php?page=orderdetail&&order_id='.$objResult['order_id'].'>รายละเอียด</a></td>';
-            $output .= '<td><a href="index.php?page=orderdetail&&order_id='.$objResult['order_id'].'">รายละเอียด</a></td>';
+            // $output .= '<td><a href="home.php?page=orderdetail&&order_id='.$objResult['order_id'].'>รายละเอียด</a></td>';
+            $output .= '<td><a href="home.php?page=orderdetail&&order_id='.$objResult['order_id'].'">รายละเอียด</a></td>';
             $output .= '</tr>';
             $total = $total + $objResult['order_total'];
         }  

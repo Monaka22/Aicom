@@ -49,7 +49,7 @@ function check($id) {
 			</select></div>
 	</div>
   </div>
-  <div><button class="btn btn-success"><a class="text-white" href="index.php?page=add">เพิ่มสินค้า</a></button></div>
+  <div><button class="btn btn-success"><a class="text-white" href="home.php?page=add">เพิ่มสินค้า</a></button></div>
 </div>
   <form class="form-inline mt-4 mb-4">
     <input class="form-control mr-sm-2 w-100" type="search" id='search' placeholder="ค้นหาสินค้าจากชื่อสินค้า" aria-label="Search">
@@ -96,7 +96,7 @@ function check($id) {
 		$objQueryc = $mysqli->query($strSQLc) or die ("error=$strSQLc");
 		$objResultc = mysqli_fetch_assoc($objQueryc);
 		echo $objResultc['product_type_name']?></td>
-		<td><a href="index.php?page=editproduct&&product_id=<?php echo $objResult['product_id']?>">แก้ไข</a></td>
+		<td><a href="home.php?page=editproduct&&product_id=<?php echo $objResult['product_id']?>">แก้ไข</a></td>
 		<td><a href="delete.php?product_id=<?php echo $objResult['product_id']?>"
 		onclick="return confirm('ต้องการลบสินค้าชนิดนี้ ?');">ลบ</a></td>
 		</tr>

@@ -12,7 +12,7 @@ if(!$objResult){
 	else{
 		$_SESSION["user_id"] = $objResult["user_id"];
 		session_write_close();
-			header("location:index.php");
+			header("location:home.php");
 		}
 	mysqli_close($mysqli);
 ?>

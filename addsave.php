@@ -23,5 +23,5 @@ if ($image['size']!=0 && $imageinfo['extension']!='jpg' && $imageinfo['extension
 		move_uploaded_file($image['tmp_name'],"../Aicom/img/$imagename");
 	}
 	mysqli_close($mysqli);
-	echo "<script>window.location='index.php?page=product';</script>";
+	echo "<script>window.location='home.php?page=product';</script>";
 ?>

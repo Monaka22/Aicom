@@ -6,5 +6,5 @@ include "conect.php";
 	$strSQL = "insert into product_type values (null,'$p_name','$status')";
 	$objQuery = $mysqli->query($strSQL) or die("error=$strsql");
 	mysqli_close($mysqli);
-	echo "<script>window.location='index.php?page=type';</script>";
+	echo "<script>window.location='home.php?page=type';</script>";
 ?>

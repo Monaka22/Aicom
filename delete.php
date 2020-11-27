@@ -4,5 +4,5 @@
   $strSQL = "UPDATE `product` SET `status` = 0 WHERE `product_id` = '$p_id'";
   $mysqli->query($strSQL) or die("error=$strsql");
   mysqli_close($mysqli);
-  echo "<script>window.location='index.php?page=product';</script>";
+  echo "<script>window.location='home.php?page=product';</script>";
   ?>

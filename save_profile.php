@@ -12,6 +12,6 @@ exit();
 }
 $strSQL = "UPDATE users SET password = '".trim($_POST['pass'])."',name = '".trim($_POST['name'])."'WHERE user_id = '".$_SESSION["user_id"]."'";
 $objQuery = $mysqli->query($strSQL);
-echo "<meta http-equiv='refresh' content ='0;url=index.php' />";
+echo "<meta http-equiv='refresh' content ='0;url=home.php' />";
 mysqli_close($mysqli);
 ?>

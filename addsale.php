@@ -34,7 +34,6 @@ function fill_product($connect, $id)
 function check($id) {
     return $id;
 }
-
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <h3 colspan="2" scope="row">เพิ่มคำสั่งซื้อ</h3>
@@ -84,7 +83,8 @@ function check($id) {
                 </div>
             </div>
             <div class="text-right">
-                <button class="btn btn-success" type="submit" ><a class="text-white">ขาย</a></button>
+                <a style="width: 80px;" class="btn btn-danger mr-4" onclick="remove();" >รีเซ็ท</a>
+                <button style="width: 80px;" class="btn btn-success" type="submit" ><a class="text-white">ขาย</a></button>
             </div>
     </form>
 <script>
@@ -146,4 +146,13 @@ function check($id) {
             });
 		document.getElementById("cform").reset();
 	});
+</script>
+<script>
+	function remove() {
+        <?php
+            $strSQLd = "DELETE FROM `carts`";
+            $objQueryd = $mysqli->query($strSQLd) or die("error=$strSQLd");
+        ?>
+        window.location.reload()
+    }
 </script>

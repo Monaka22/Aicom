@@ -10,5 +10,5 @@ echo date("Y-m-d H:i:s");
 	$strSQL = "insert into stock values (null,'$product','$p_stock','$status','$date','$date')";
 	$objQuery = $mysqli->query($strSQL) or die("error=$strsql");
 	mysqli_close($mysqli);
-	echo "<script>window.location='index.php?page=stock';</script>";
+	echo "<script>window.location='home.php?page=stock';</script>";
 ?>

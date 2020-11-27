@@ -31,7 +31,7 @@ include "conect.php";
         $type = $objResultc['product_type_name'];
         $onclickText = "ต้องการลบสินค้าชนิดนี้ ?";
         $output .= '<td align="center">' . $type . '</td>';
-        $output .= '<td><a href="index.php?page=editproduct&&product_id='.$objResult['product_id'].'">แก้ไข</a></td>';
+        $output .= '<td><a href="home.php?page=editproduct&&product_id='.$objResult['product_id'].'">แก้ไข</a></td>';
         $output .= '<td><a href="delete.php?product_id='.$objResult['product_id'].'" onclick="return confirm('.$onclickText.');">ลบ</a></td>';
         $output .= '</tr>';
       }  

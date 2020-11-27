@@ -27,5 +27,5 @@ $total = 0;
     }
     $strSQLd = "DELETE FROM `carts`";
     $objQueryd = $mysqli->query($strSQLd) or die("error=$strSQLd");
-    echo "<script>window.location='index.php?page=home';</script>";
+    echo "<script>window.location='home.php?page=home';</script>";
 ?>

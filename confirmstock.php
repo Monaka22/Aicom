@@ -8,5 +8,5 @@
     $strSQLp = "UPDATE `product` SET product_stock = product_stock + $stock_total WHERE `product_id` = '$product_id'";
     $mysqli->query($strSQLp) or die("error=$strSQLp");
     mysqli_close($mysqli);
-    echo "<script>window.location='index.php?page=stock';</script>";
+    echo "<script>window.location='home.php?page=stock';</script>";
 ?>
